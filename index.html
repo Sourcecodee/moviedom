@@ -1,91 +1,158 @@
-<!--DOCTYPE html-->
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            Moviedom
-        </title>
-        <link rel="stylesheet" href="index.css">
-        <script src="https://kit.fontawesome.com/c75cbf3983.js" crossorigin="anonymous"></script>
-    </head>
-
-    <body>
-        
-        <div class="wrapper">
-
-            <div class="navBar">
-
-                <div class="container flex">
-
-                    <div class="logo">
-                        <img src="Assets/logo.svg" alt="Moviedom Logo" style="height:40px;width:40px;margin-right:10px;vertical-align:middle;"/>
-                        <h2 style="color:#FF6F61;font-family:'Arial Black',Arial,sans-serif;letter-spacing:2px;">Moviedom</h2>
-                        <nav class="navMenu">
-                            <ul class="one">
-                                <li>Home</li>
-                                <li class="movies">Movies
-
-                                    <ul class="movie">
-                                        <li>Action</li>
-                                        <li>Adventure</li>
-                                        <li>Biography</li>
-                                        <li>Comedy</li>
-                                        <li>Documentary</li>
-                                        <li>Drama</li>
-                                        <li>Fantasy</li>
-                                        <li>Horror</li>
-                                        <li>Suspense</li>
-                                        <li>Slasher</li>
-                                        <li>Thrille</li>
-                                    </ul>
-                                    
-                                </li>
-                                <li>Series</li>
-                                <li>Genres</li>
-                                <li>Year</li>
-                            </ul>
-                        </nav>
-                    </div>
-
-                    <div class="search">
-                        <input id="searchBox" type="search" name="search" placeholder="search">
-                        <img id="searchI" src="Assets/icons8-search-50.png" alt="search-icon" style="height:32px;width:32px;border:none;cursor:pointer;vertical-align:middle;"/>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="movie-panel">
-                    <div class="container mov">
-                        
-                    </div>
-            </div>
-
-            <div class="pagination">
-                <div class="container pagi">
-
-                    <div class="page first">1</div>
-                    <div class="page second">2</div>
-                    <div class="page third">3</div>
-
-                </div>
-            </div>
-
-            <div class="footer">
-                <div class="container footer">
-                    <div class="copyright">
-                        <i class="fa-regular fa-copyright fa-xs""></i>
-                        <h6>Dark Codes</h6>
-                    </div>
-                </div>
-            </div>
-
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moviedom — Discover. Watch. Remember.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/c75cbf3983.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Header — sticky, blurred, cinematic -->
+  <header class="site-header">
+    <div class="container header-main">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">M</span>
+        <span class="brand-name">Moviedom</span>
+        <span class="brand-tag">Film Archive</span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li class="has-dropdown">
+            <button class="nav-btn" aria-expanded="false">Movies <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:4px"></i></button>
+            <ul class="dropdown">
+              <li><button data-genre="28">Action</button></li>
+              <li><button data-genre="12">Adventure</button></li>
+              <li><button data-genre="35">Comedy</button></li>
+              <li><button data-genre="18">Drama</button></li>
+              <li><button data-genre="27">Horror</button></li>
+              <li><button data-genre="878">Sci-Fi</button></li>
+              <li><button data-genre="53">Thriller</button></li>
+              <li><button data-genre="16">Animation</button></li>
+            </ul>
+          </li>
+          <li><a href="#trending">Trending</a></li>
+          <li><a href="#collection">Collection</a></li>
+        </ul>
+      </nav>
+      <div class="search-wrap">
+        <div class="search-field">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="searchBox" type="search" placeholder="Search titles, people, genres">
         </div>
+        <button id="searchI" class="search-btn" aria-label="Search">Search</button>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
 
-        <script src="index.js"></script>
-    </body>
+  <!-- Hero — cinematic, not AI gradient -->
+  <section class="hero" id="hero">
+    <div class="hero-backdrop" id="heroBackdrop"></div>
+    <div class="hero-gradient"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> Now showing • Editors pick</div>
+        <h1 class="hero-title" id="heroTitle">Stories that stay with you</h1>
+        <p class="hero-desc" id="heroDesc">Hand-picked from thousands of titles. Search, discover and open any film on its own page — no clutter, just cinema.</p>
+        <div class="hero-actions">
+          <a href="#collection" class="btn-primary">Browse collection <i class="fa-solid fa-arrow-right"></i></a>
+          <span class="hero-meta">TMDB • Free to browse • No sign-up</span>
+        </div>
+        <div class="hero-proof">
+          <span><strong>4.8</strong>/5 curated</span><span class="sep">•</span><span>Daily refresh</span><span class="sep">•</span><span>By Dark Codes</span>
+        </div>
+      </div>
+      <div class="hero-card" id="heroCard">
+        <!-- injected -->
+      </div>
+    </div>
+  </section>
 
+  <!-- Genre strip + browse header -->
+  <section class="browse-head" id="collection">
+    <div class="container">
+      <div class="browse-title-row">
+        <div>
+          <div class="eyebrow dark">Browse</div>
+          <h2 class="section-title">Collection</h2>
+          <p class="section-sub">Tap a poster — opens on a dedicated film page, not the homepage.</p>
+        </div>
+        <div class="genre-pills" id="genrePills">
+          <button class="pill active" data-genre="">All</button>
+          <button class="pill" data-genre="28">Action</button>
+          <button class="pill" data-genre="35">Comedy</button>
+          <button class="pill" data-genre="18">Drama</button>
+          <button class="pill" data-genre="27">Horror</button>
+          <button class="pill" data-genre="878">Sci-Fi</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Movie grid -->
+  <section class="movie-panel">
+    <div class="container">
+      <div class="mov" id="movGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <div class="empty-icon"><i class="fa-regular fa-face-frown"></i></div>
+        <h3>No matches</h3>
+        <p>Try a different title or genre. Check spelling — TMDB is picky.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="pagination" id="paginationBar">
+    <div class="container pagi">
+      <button class="page prev" id="prevPage" aria-label="Previous page"><i class="fa-solid fa-chevron-left" style="font-size:12px"></i></button>
+      <div class="page-numbers" id="pageNumbers"></div>
+      <button class="page next" id="nextPage" aria-label="Next page"><i class="fa-solid fa-chevron-right" style="font-size:12px"></i></button>
+      <span class="page-info" id="pageInfo">Page 1 • Discover</span>
+    </div>
+  </div>
+
+  <!-- Editorial strip -->
+  <section class="journal">
+    <div class="container journal-inner">
+      <div>
+        <div class="eyebrow dark">Notes</div>
+        <h3>How we curate</h3>
+        <p>Real TMDB data, no mock posters. Every film opens on its own page with full credits, overview and similar titles.</p>
+      </div>
+      <div class="journal-cards">
+        <div class="jcard"><strong>No inline popups</strong><span>Each film has a dedicated URL you can share and bookmark.</span></div>
+        <div class="jcard"><strong>Fast on mobile</strong><span>2-up grid, large posters, thumb-friendly “View” buttons.</span></div>
+        <div class="jcard"><strong>Honest data</strong><span>Ratings and backdrops straight from TMDB, not fabricated.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand small"><span class="brand-mark">M</span><span class="brand-name">Moviedom</span></div>
+        <p>A small archive by Dark Codes. Built for people who love film, not algorithms.</p>
+        <div class="footer-tags"><span>TMDB-powered</span><span>No trackers</span><span>Dark mode</span></div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#collection">Collection</a><a href="#trending">Trending</a><a href="#">Genres</a><a href="#">Year</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <span>hello@moviedom.local</span><span>Built in the open</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Moviedom — by Dark Codes</span>
+      <span class="footer-links"><a href="#">Privacy</a><a href="#">Credits: TMDB</a></span>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
 </html>

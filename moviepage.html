@@ -1,90 +1,75 @@
-<!--DOCTYPE html-->
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            Moviepage
-        </title>
-        <link rel="stylesheet" href="moviedom.css">
-        <script src="https://kit.fontawesome.com/c75cbf3983.js" crossorigin="anonymous"></script>
-    </head>
-
-    <body>
-        
-        <div class="wrapper">
-
-            <div class="navBar">
-
-                <div class="container flex">
-
-                    <div class="logo">
-                        <h2>Moviedom</h2>
-                        <nav class="navMenu">
-                            <ul class="one">
-                                <li>Home</li>
-                                <li class="movies">Movies
-                                    <ul class="movie">
-                                        <li>Action</li>
-                                        <li>Adventure</li>
-                                        <li>Biography</li>
-                                        <li>Comedy</li>
-                                        <li>Documentary</li>
-                                        <li>Drama</li>
-                                        <li>Fantasy</li>
-                                        <li>Horror</li>
-                                        <li>Suspense</li>
-                                        <li>Slasher</li>
-                                        <li>Thriller</li>
-                                    </ul>
-                                </li>
-                                <li>Series</li>
-                                <li>Genres</li>
-                                <li>Year</li>
-                            </ul>
-                        </nav>
-                    </div>
-
-                    <div class="search">
-                        <input id="searchBox" type="search" name="search" placeholder="search">
-                        <img id="searchI" src="components/icons8-search-50.png" alt="search-icon" style="border: none; cursor: pointer;"/>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="movie-panel">
-
-                    <div class="container mov">
-                        
-                    </div>
-
-            </div>
-
-            <div class="pagination">
-                <div class="container pagi">
-
-                    <div class="page first">1</div>
-                    <div class="page second">2</div>
-                    <div class="page third">3</div>
-
-                </div>
-            </div>
-
-            <div class="footer">
-                <div class="container footer">
-                    <div class="copyright">
-                        <i class="fa-regular fa-copyright fa-sm"></i>
-                        <h6>Dark Codes</h6>
-                    </div>
-                </div>
-            </div>
-
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moviedom — Film</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/c75cbf3983.js" crossorigin="anonymous"></script>
+  <style>
+    .detail-wrap{padding:22px 0 28px}
+    .back-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+    .back-link:hover{color:var(--text)}
+    .detail-grid{display:grid;grid-template-columns:360px 1fr;gap:28px;align-items:start}
+    @media(max-width:820px){.detail-grid{grid-template-columns:1fr}}
+    .poster-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+    .poster-card img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block}
+    .detail-main{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:20px}
+    .detail-eyebrow{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);font-weight:700}
+    .detail-title{font-family:'Newsreader',Georgia,serif;font-size:36px;line-height:0.95;margin-top:8px;font-weight:600}
+    .detail-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .meta-pill{background:var(--bg);border:1px solid var(--border);padding:6px 10px;border-radius:999px;font-size:11px;font-weight:700;color:var(--muted)}
+    .detail-overview{margin-top:16px;color:#d4d4d8;font-size:14px;line-height:1.7}
+    .detail-grid-2{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    @media(max-width:640px){.detail-grid-2{grid-template-columns:1fr}}
+    .info-box{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:12px}
+    .info-box strong{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint)}
+    .info-box span{display:block;margin-top:4px;font-size:13px;font-weight:600}
+    .similar-head{display:flex;justify-content:space-between;align-items:end;margin-top:22px}
+    .similar-head h3{font-family:'Newsreader',Georgia,serif;font-size:22px;font-weight:600}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-main">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">M</span>
+        <span class="brand-name">Moviedom</span>
+        <span class="brand-tag">Film Archive</span>
+      </a>
+      <div class="search-wrap">
+        <div class="search-field">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="searchBox" type="search" placeholder="Search titles">
         </div>
+        <button id="searchI" class="search-btn">Search</button>
+      </div>
+    </div>
+  </header>
 
-        <script src=""></script>
-    </body>
+  <main class="detail-wrap">
+    <div class="container">
+      <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to collection</a>
+      <div id="detailMount">
+        <div style="text-align:center;color:var(--muted);padding:60px">Loading film…</div>
+      </div>
+      <div class="similar-head">
+        <h3>You may also like</h3>
+        <a href="index.html" style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)">View all →</a>
+      </div>
+      <div class="mov" id="similarGrid" style="margin-top:12px"></div>
+    </div>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <span>© 2026 Moviedom — by Dark Codes</span>
+      <span>TMDB • No ads • Curated</span>
+    </div>
+  </footer>
+  <script src="moviepagejs.js"></script>
+</body>
 </html>
